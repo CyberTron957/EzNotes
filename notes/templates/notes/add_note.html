@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="my-4">
+    <h1 class="mb-4">Add Note</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.content.label_tag }}
+            {{ form.content }}
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</div>
+{% endblock %}

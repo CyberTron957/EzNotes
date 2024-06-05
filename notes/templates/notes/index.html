@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="my-4">
+    <h1 class="mb-4">My Notes</h1>
+    {% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <a href="{% url 'add_note' %}" class="btn btn-primary mb-4">Add Note</a>
+    <ul class="list-group">
+        {% for note in notes %}
+        <li class="list-group-item">{{ note.content }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
